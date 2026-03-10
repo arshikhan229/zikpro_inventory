@@ -202,35 +202,5 @@ Code scanning using Frappe Semgrep rules
 
 MIT License
 
-
-```mermaid
-flowchart TD
-A[ERPNext Inventory Data] --> B[Inventory Analytics Layer]
-
-B --> C[Warehouse Analytics]
-B --> D[Stock Movement Intelligence]
-B --> E[Inventory Alerts]
-
-C --> F[AI Engine]
-D --> F
-E --> F
-
-F --> G[Demand Forecast]
-F --> H[Smart Reorder Engine]
-F --> I[Supplier Recommendation]
-
-G --> J[Autonomous Procurement Agent]
-H --> J
-I --> J
-
-J --> K[Purchase Order Automation]
-
-K --> L[ERPNext Purchase Order]
-
-L --> M[Mini SAP Dashboard]
-
-N[Frappe Scheduler] --> J
-```
-
 N[Frappe Scheduler] --> J
 ```
