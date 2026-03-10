@@ -207,7 +207,6 @@ MIT License
 
 ```mermaid
 flowchart TD
-
 A[ERPNext Inventory Data] --> B[Inventory Analytics Layer]
 
 B --> C[Warehouse Analytics]
