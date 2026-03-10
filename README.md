@@ -203,8 +203,6 @@ Code scanning using Frappe Semgrep rules
 MIT License
 
 
-## System Architecture Diagram
-
 ```mermaid
 flowchart TD
 A[ERPNext Inventory Data] --> B[Inventory Analytics Layer]
@@ -230,6 +228,9 @@ J --> K[Purchase Order Automation]
 K --> L[ERPNext Purchase Order]
 
 L --> M[Mini SAP Dashboard]
+
+N[Frappe Scheduler] --> J
+```
 
 N[Frappe Scheduler] --> J
 ```
