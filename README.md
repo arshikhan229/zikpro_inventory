@@ -201,6 +201,3 @@ Code scanning using Frappe Semgrep rules
 ###License
 
 MIT License
-
-N[Frappe Scheduler] --> J
-```
