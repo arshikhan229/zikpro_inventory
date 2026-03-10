@@ -1,0 +1,91 @@
+{
+"actions": [],
+"allow_rename": 1,
+"creation": "2026-03-06 14:37:43.616383",
+"doctype": "DocType",
+"engine": "InnoDB",
+"field_order": [
+"section_break_1",
+"item",
+"warehouse",
+"current_stock",
+"reorder_level",
+"status",
+"suggestion",
+"last_checked"
+],
+"fields": [
+{
+"fieldname": "section_break_1",
+"fieldtype": "Section Break",
+"label": "Inventory Information"
+},
+{
+"fieldname": "item",
+"fieldtype": "Link",
+"label": "Item",
+"options": "Item",
+"reqd": 1
+},
+{
+"fieldname": "warehouse",
+"fieldtype": "Link",
+"label": "Warehouse",
+"options": "Warehouse",
+"reqd": 1
+},
+{
+"fieldname": "current_stock",
+"fieldtype": "Float",
+"label": "Current Stock"
+},
+{
+"fieldname": "reorder_level",
+"fieldtype": "Float",
+"label": "Reorder Level"
+},
+{
+"fieldname": "status",
+"fieldtype": "Select",
+"label": "Inventory Status",
+"options": "\nLow Stock\nFast Moving\nDead Stock\nNormal"
+},
+{
+"fieldname": "suggestion",
+"fieldtype": "Small Text",
+"label": "System Suggestion"
+},
+{
+"fieldname": "last_checked",
+"fieldtype": "Datetime",
+"label": "Last Checked"
+}
+],
+"grid_page_length": 50,
+"index_web_pages_for_search": 1,
+"links": [],
+"modified": "2026-03-06 14:37:43.616383",
+"modified_by": "Administrator",
+"module": "Zikpro Inventory",
+"name": "Inventory Alert",
+"owner": "Administrator",
+"permissions": [
+{
+"create": 1,
+"delete": 1,
+"email": 1,
+"export": 1,
+"print": 1,
+"read": 1,
+"report": 1,
+"role": "System Manager",
+"share": 1,
+"write": 1
+}
+],
+"row_format": "Dynamic",
+"rows_threshold_for_grid_search": 20,
+"sort_field": "modified",
+"sort_order": "DESC",
+"states": []
+}

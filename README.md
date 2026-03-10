@@ -1,41 +1,235 @@
-### Zikpro Inventory
+# Zikpro Inventory – Mini SAP AI Supply Chain System
 
-Zikpro Smart Inventory
+Zikpro Inventory is an AI-powered inventory and procurement automation system built on **Frappe Framework and ERPNext**.
 
-### Installation
+The project demonstrates how Artificial Intelligence can be integrated with ERP systems to automate inventory management, demand forecasting, supplier selection, and purchase order creation.
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+This system acts as a **Mini SAP-style intelligent supply chain platform**.
 
-```bash
+---
+
+# Features
+
+## Inventory Analytics
+- Inventory dashboard
+- Warehouse stock distribution
+- Stock movement intelligence
+- Inventory alerts for low stock items
+
+## AI Demand Forecast
+- Predicts future demand (currently simulated using random data)
+- Calculates smart reorder quantities
+
+## Procurement Automation
+- Reorder engine
+- Automatic purchase order generation
+
+## AI Supplier Intelligence
+- Supplier recommendation
+- Supplier performance scoring
+
+## Autonomous Procurement Agent
+- AI agent that:
+  - detects low stock
+  - predicts demand
+  - selects supplier
+  - creates purchase order automatically
+
+## Scheduler Automation
+The system can run automatically using the Frappe scheduler to perform daily AI procurement analysis.
+
+---
+
+# Technology Stack
+
+- Python
+- Frappe Framework
+- ERPNext
+- JavaScript
+- MariaDB
+- Redis
+- Bench CLI
+
+---
+
+# System Architecture
+
+
+Mini SAP Architecture
+
+Inventory Layer
+↓
+Analytics Layer
+↓
+AI Forecast Engine
+↓
+Decision Engine
+↓
+Procurement Automation
+↓
+Scheduler Automation
+
+
+---
+
+# Dashboard
+
+The system includes a **Mini SAP Analytics Dashboard** displaying:
+
+- Total inventory items
+- Total stock
+- Low stock alerts
+- Warehouse distribution chart
+- AI smart reorder suggestions
+- Demand forecast visualization
+
+---
+
+# Example API Usage
+
+### AI Reorder Prediction
+
+```python
+frappe.call("zikpro_inventory.api.get_ai_reorder", item="MILK-001")
+
+
+Example response:
+
+{
+ "item": "MILK-001",
+ "current_stock": 200,
+ "predicted_demand": 327,
+ "suggested_reorder": 127
+ 
+}
+
+###Run Autonomous AI Procurement
+
+frappe.call("zikpro_inventory.api.run_ai_procurement", item="MILK-001")
+
+Example response:
+
+{
+ "item": "MILK-001",
+ "supplier": "ALL001",
+ "predicted_demand": 327,
+ "reorder_qty": 127,
+ "purchase_order": "PUR-ORD-2026-00005"
+}
+
+Installation
+
+You can install this app using the bench CLI.
+
 cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
+bench get-app $URL_OF_THIS_REPO
 bench install-app zikpro_inventory
-```
 
-### Contributing
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+###Project Structure
+zikpro_inventory
+│
+├ inventory
+│   ├ warehouse_analytics.py
+│   └ stock_movement.py
+│
+├ procurement
+│   ├ reorder_engine.py
+│   └ auto_purchase_order.py
+│
+├ ai
+│   ├ demand_forecast.py
+│   ├ smart_reorder.py
+│   ├ supplier_recommendation.py
+│   └ procurement_agent.py
+│
+├ scheduler.py
+├ api.py
+└ page
+    └ mini_sap_dashboard
 
-```bash
+
+###Future Improvements
+
+Machine learning demand forecasting using sales history
+
+Multi-warehouse optimization
+
+Supplier reliability scoring
+
+Real-time inventory alerts
+
+Advanced supply chain analytics
+
+###Contributing
+
+This app uses pre-commit for code formatting and linting.
+
+Install pre-commit:
+
+pip install pre-commit
+
+Enable it:
 cd apps/zikpro_inventory
 pre-commit install
-```
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+Tools used:
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+ruff
 
-### CI
+eslint
 
-This app can use GitHub Actions for CI. The following workflows are configured:
+prettier
 
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
+pyupgrade
 
 
-### License
 
-mit
+###CI
+
+GitHub Actions can be used for continuous integration.
+
+Workflows include:
+
+CI testing on push
+
+Security checks using pip-audit
+
+Code scanning using Frappe Semgrep rules
+
+
+###License
+
+MIT License
+
+
+## System Architecture Diagram
+
+```mermaid
+flowchart TD
+
+A[ERPNext Inventory Data] --> B[Inventory Analytics Layer]
+
+B --> C[Warehouse Analytics]
+B --> D[Stock Movement Intelligence]
+B --> E[Inventory Alerts]
+
+C --> F[AI Engine]
+D --> F
+E --> F
+
+F --> G[Demand Forecast]
+F --> H[Smart Reorder Engine]
+F --> I[Supplier Recommendation]
+
+G --> J[Autonomous Procurement Agent]
+H --> J
+I --> J
+
+J --> K[Purchase Order Automation]
+
+K --> L[ERPNext Purchase Order]
+
+L --> M[Mini SAP Dashboard]
+
+N[Frappe Scheduler] --> J

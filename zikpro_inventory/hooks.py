@@ -5,6 +5,22 @@ app_description = "Zikpro Smart Inventory"
 app_email = "info@zikpro.com"
 app_license = "mit"
 
+
+scheduler_events = {
+    "hourly": [
+        "zikpro_inventory.inventory_scanner.run_inventory_scan"
+    ]
+}
+
+
+scheduler_events = {
+
+    "daily": [
+        "zikpro_inventory.scheduler.run_ai_procurement_job"
+    ]
+
+}
+
 # Apps
 # ------------------
 
