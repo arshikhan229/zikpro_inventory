@@ -203,7 +203,7 @@ Code scanning using Frappe Semgrep rules
 MIT License
 
 
-```mermaid
+'''mermaid
 flowchart TD
 A[ERPNext Inventory Data] --> B[Inventory Analytics Layer]
 
